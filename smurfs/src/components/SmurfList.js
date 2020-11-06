@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from "react-redux";
+import { fetchData } from "../store/actions"
 
-const SmurfList =() => {
+const SmurfList =(props) => {
+    
+    useEffect(() => {
+        props.fetchData()
+    }, []);
+
     return (
         <div>
-            <h1>blank</h1>
-
+            <h2>data will go here</h2>
         </div>
     )
 }
@@ -18,4 +23,4 @@ const mapStateToProps = (state) => {
     }
   }
 
-export default connect(mapStateToProps, {  })(SmurfList)
+export default connect(mapStateToProps, { fetchData })(SmurfList)

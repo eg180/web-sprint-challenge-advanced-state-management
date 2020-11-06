@@ -1,4 +1,4 @@
-
+import axios from "axios";
 
 // this is how you transition from state-to-state - i8n our actions creator.
 // this informs the reducer about the type of state change request
@@ -14,7 +14,21 @@ export const fetchData = () => {
     return (dispatch) => {
         // do async actions here
         dispatch({ type: FETCH_DATA_START })
-        console.log('hey')
+        console.log('fetch data initiated from within actions file')
+
+        // fetch data
+
+
+        axios
+        .get("http://localhost:3333/smurfs")
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err.message)
+        })
+
+
     }
 }
 

@@ -4,7 +4,7 @@ import { FETCH_DATA_START, FETCH_DATA_SUCCESS } from "../actions";
 
 const initialState = {
     isLoading: false,
-    smurfData: [],
+    smurfData: [{name: "Erick", age: "40"}, {name: "Christian", age: "17"}],
     error: ""
 }
 

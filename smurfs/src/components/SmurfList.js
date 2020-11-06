@@ -11,6 +11,12 @@ const SmurfList =(props) => {
     return (
         <div>
             <h2>data will go here</h2>
+            {props.isLoading ? <p> Loading data...</p> : null}
+            {props.error ? <p>{props.error}</p> : null}
+            <h3>Smurfs: {props.smurfData.map((smurf) => {
+                return (<h2>{smurf.name}</h2>)
+            })}</h3>
+
         </div>
     )
 }
@@ -18,7 +24,7 @@ const SmurfList =(props) => {
 const mapStateToProps = (state) => {
     return {
       isLoading: state.isLoading,
-      covidData: state.covidData,
+      smurfData: state.smurfData,
       error: state.error
     }
   }

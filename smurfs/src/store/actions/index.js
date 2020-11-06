@@ -23,6 +23,8 @@ export const fetchData = () => {
         .get("http://localhost:3333/smurfs")
         .then((res) => {
             console.log(res)
+            // let's dispatch this data
+            dispatch( { type: FETCH_DATA_SUCCESS, payload: res.data })
         })
         .catch((err) => {
             console.log(err.message)

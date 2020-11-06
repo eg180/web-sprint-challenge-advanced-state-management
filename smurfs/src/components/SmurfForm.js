@@ -28,7 +28,7 @@ const SmurfForm = (props) => {
                 name="height"
                 placeholder="height"
                 />
-                <button onClick={printConsoleLog}></button>
+                <button onClick={printConsoleLog}>Print to console log</button>
             </form>
         </div>
     )
@@ -37,7 +37,7 @@ const SmurfForm = (props) => {
 const mapStateToProps = (state) => {
     return {
       isLoading: state.isLoading,
-      covidData: state.covidData,
+      smurfData: state.smurfData,
       error: state.error
     }
   }

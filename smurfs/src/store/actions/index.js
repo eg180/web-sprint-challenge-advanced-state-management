@@ -7,6 +7,7 @@ import axios from "axios";
 
 export const FETCH_DATA_START = "FETCH_DATA_START";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
+export const ADD_SMURF = "ADD_SMURF"
 
 // ASYNC action creators
 
@@ -17,8 +18,6 @@ export const fetchData = () => {
         console.log('fetch data initiated from within actions file')
 
         // fetch data
-
-
         axios
         .get("http://localhost:3333/smurfs")
         .then((res) => {
@@ -29,8 +28,12 @@ export const fetchData = () => {
         .catch((err) => {
             console.log(err.message)
         })
+    }
+}
 
-
+export const newSmurf = () => {
+    return (dispatch) => {
+        dispatch({ type: ADD_SMURF })
     }
 }
 
